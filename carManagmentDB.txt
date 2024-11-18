@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS managementVehicle;
+USE managementVehicle;
+
+CREATE TABLE IF NOT EXISTS Vehicle (
+    Id CHAR(16) NOT NULL,
+    Brand VARCHAR(20),
+    Model VARCHAR(20),
+    Year INT,
+    Color VARCHAR(20),
+    Image VARCHAR(20),
+    PRIMARY KEY (Id)
+);
+
+INSERT INTO Vehicle (Id, Brand, Model, Year, Color, Image) VALUES
+('0X-432-43955-001', 'Acura', 'ILX', 2008, 'rouge', 'acura_ilx.jpg'),
+('0X-432-43955-002', 'Toyota', 'Yaris', 2009, 'bleu', 'toyota.jpg'),
+('0X-432-43955-003', 'BMW', 'X3', 2010, 'argent', 'bmw_x3.jpg'),
+('0X-432-43955-004', 'BMW', 'X5', 2011, 'noir', 'bmw_x5.jpg'),
+('0X-432-43955-005', 'Acura', 'TL', 2012, 'rouge', 'acura_tl.jpg');
+
+ALTER TABLE Vehicle MODIFY COLUMN Image VARCHAR(600);
+ALTER TABLE Vehicle MODIFY image VARCHAR(255);  -- Or VARCHAR(255) depending on your needs
